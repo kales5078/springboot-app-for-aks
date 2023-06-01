@@ -1,5 +1,6 @@
 pipeline {
-    agent any   
+    agent any
+    stages {
     stage('Integrate Jenkins with EKS Cluster and Deploy App') {
         steps {
                 withAWS(credentials: '8799cbb5-0db1-405c-a1ee-5a2635fb1bbd', region: 'us-east-1') {
@@ -9,5 +10,6 @@ pipeline {
                 }
            }
         }
-     }
+    }
+   }
 }
